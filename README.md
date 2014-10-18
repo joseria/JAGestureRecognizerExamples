@@ -16,11 +16,11 @@ let panGestureRecognizer = UIPanGestureRecognizer(target:self, action: "panHandl
 earthImageView.addGestureRecognizer(panGestureRecognizer);
 
 // Pan gesture handler
-    func panHandler(recognizer:UIPanGestureRecognizer) {
-        let translation = recognizer.translationInView(view);
-        recognizer.view!.center = CGPoint(x: recognizer.view!.center.x + translation.x, y: recognizer.view!.center.y + translation.y);
-        recognizer.setTranslation(CGPointZero, inView: view);
-    }
+func panHandler(recognizer:UIPanGestureRecognizer) {
+    let translation = recognizer.translationInView(view);
+    recognizer.view!.center = CGPoint(x: recognizer.view!.center.x + translation.x, y: recognizer.view!.center.y + translation.y);
+    recognizer.setTranslation(CGPointZero, inView: view);
+}
 
 ```
 
@@ -39,22 +39,22 @@ earthImageView.addGestureRecognizer(rightSwipeGestureRecognizer);
 earthImageView.addGestureRecognizer(leftSwipeGestureRecognizer);
 
 // Swipe gesture handler
-    func swipeHandler(recognizer:UISwipeGestureRecognizer) {
-        switch recognizer.direction {
-        case UISwipeGestureRecognizerDirection.Left:
-            if earthImageView.alpha > 0.2 {
-                earthImageView.alpha *= kALPHA_FACTOR;
-            }
-            println("Swipe Left");
-        case UISwipeGestureRecognizerDirection.Right:
-            if earthImageView.alpha < 1.0 {
-                earthImageView.alpha /= kALPHA_FACTOR;
-            }
-            println("Swipe Right");
-        default:
-            println("Undefined swipe direction");
+func swipeHandler(recognizer:UISwipeGestureRecognizer) {
+    switch recognizer.direction {
+    case UISwipeGestureRecognizerDirection.Left:
+        if earthImageView.alpha > 0.2 {
+            earthImageView.alpha *= kALPHA_FACTOR;
         }
+        println("Swipe Left");
+    case UISwipeGestureRecognizerDirection.Right:
+        if earthImageView.alpha < 1.0 {
+            earthImageView.alpha /= kALPHA_FACTOR;
+        }
+        println("Swipe Right");
+    default:
+        println("Undefined swipe direction");
     }
+}
 ```
 
 ###UITapGestureRecognizer
@@ -64,12 +64,12 @@ let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapHand
 earthImageView.addGestureRecognizer(tapGestureRecognizer);
 
 // Tap gesture handler
-    func tapHandler(recognizer:UITapGestureRecognizer) {
-        earthImageView.center = view.center;
-        earthImageView.transform = CGAffineTransformIdentity;
-        earthImageView.image = UIImage(named: "earth.png");
-        earthImageView.alpha = 1.0;
-    }
+func tapHandler(recognizer:UITapGestureRecognizer) {
+    earthImageView.center = view.center;
+    earthImageView.transform = CGAffineTransformIdentity;
+    earthImageView.image = UIImage(named: "earth.png");
+    earthImageView.alpha = 1.0;
+}
 ```
 
 ###UILongPressGestureRecognizer
@@ -79,16 +79,16 @@ let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, acti
 earthImageView.addGestureRecognizer(longPressGestureRecognizer);
 
 // Long press gesture handler
-    func longPressHandler(recognizer:UILongPressGestureRecognizer) {
-        if recognizer.state == UIGestureRecognizerState.Began {
-            if earthBW {
-                earthImageView.image = UIImage(named: "earth.png");
-            } else {
-                earthImageView.image = UIImage(named: "earthRipple.png");
-            }
-            earthBW = !earthBW;
+func longPressHandler(recognizer:UILongPressGestureRecognizer) {
+    if recognizer.state == UIGestureRecognizerState.Began {
+        if earthBW {
+            earthImageView.image = UIImage(named: "earth.png");
+        } else {
+            earthImageView.image = UIImage(named: "earthRipple.png");
         }
+        earthBW = !earthBW;
     }
+}
 ```
 
 ###UIPinchGestureRecognizer
@@ -98,11 +98,11 @@ let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: "pin
 earthImageView.addGestureRecognizer(pinchGestureRecognizer);
 
 // Pinch gesture handler
-    func pinchHandler(recognizer:UIPinchGestureRecognizer) {
-        recognizer.view!.transform = CGAffineTransformScale(recognizer.view!.transform, recognizer.scale, recognizer.scale);
-        // Reset the scale factor
-        recognizer.scale = 1;
-    }
+func pinchHandler(recognizer:UIPinchGestureRecognizer) {
+    recognizer.view!.transform = CGAffineTransformScale(recognizer.view!.transform, recognizer.scale, recognizer.scale);
+    // Reset the scale factor
+    recognizer.scale = 1;
+}
 
 ```
 
@@ -113,11 +113,11 @@ let rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: 
 earthImageView.addGestureRecognizer(rotateGestureRecognizer);
 
 // Rotate gesture handler
-    func rotateHandler(recognizer:UIRotationGestureRecognizer) {
-        recognizer.view!.transform = CGAffineTransformRotate(recognizer.view!.transform, recognizer.rotation);
-        // Reset the rotation
-        recognizer.rotation = 0;
-    }
+func rotateHandler(recognizer:UIRotationGestureRecognizer) {
+    recognizer.view!.transform = CGAffineTransformRotate(recognizer.view!.transform, recognizer.rotation);
+    // Reset the rotation
+    recognizer.rotation = 0;
+}
 ```
 
 
