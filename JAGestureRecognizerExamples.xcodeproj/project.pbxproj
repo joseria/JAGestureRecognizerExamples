@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5FD65BE519E9ED23008C1364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD65BE419E9ED23008C1364 /* AppDelegate.swift */; };
+		5FD65BEA19E9ED23008C1364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FD65BE819E9ED23008C1364 /* Main.storyboard */; };
+		5FD65BEC19E9ED23008C1364 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD65BEB19E9ED23008C1364 /* Images.xcassets */; };
+		5FD65BEF19E9ED23008C1364 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FD65BED19E9ED23008C1364 /* LaunchScreen.xib */; };
+		5FD65BFB19E9ED23008C1364 /* JAGestureRecognizerExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD65BFA19E9ED23008C1364 /* JAGestureRecognizerExamplesTests.swift */; };
+		5FD65C0919E9FE51008C1364 /* JAGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD65C0819E9FE51008C1364 /* JAGestureViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FD65BF519E9ED23008C1364 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FD65BD719E9ED23008C1364 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FD65BDE19E9ED23008C1364;
+			remoteInfo = JAGestureRecognizerExamples;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5FD65BDF19E9ED23008C1364 /* JAGestureRecognizerExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JAGestureRecognizerExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD65BE319E9ED23008C1364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FD65BE419E9ED23008C1364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5FD65BE919E9ED23008C1364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5FD65BEB19E9ED23008C1364 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5FD65BEE19E9ED23008C1364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5FD65BF419E9ED23008C1364 /* JAGestureRecognizerExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JAGestureRecognizerExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD65BF919E9ED23008C1364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FD65BFA19E9ED23008C1364 /* JAGestureRecognizerExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAGestureRecognizerExamplesTests.swift; sourceTree = "<group>"; };
+		5FD65C0819E9FE51008C1364 /* JAGestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAGestureViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5FD65BDC19E9ED23008C1364 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FD65BF119E9ED23008C1364 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5FD65BD619E9ED23008C1364 = {
+			isa = PBXGroup;
+			children = (
+				5FD65BE119E9ED23008C1364 /* JAGestureRecognizerExamples */,
+				5FD65BF719E9ED23008C1364 /* JAGestureRecognizerExamplesTests */,
+				5FD65BE019E9ED23008C1364 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5FD65BE019E9ED23008C1364 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FD65BDF19E9ED23008C1364 /* JAGestureRecognizerExamples.app */,
+				5FD65BF419E9ED23008C1364 /* JAGestureRecognizerExamplesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FD65BE119E9ED23008C1364 /* JAGestureRecognizerExamples */ = {
+			isa = PBXGroup;
+			children = (
+				5FD65BE419E9ED23008C1364 /* AppDelegate.swift */,
+				5FD65BE819E9ED23008C1364 /* Main.storyboard */,
+				5FD65BEB19E9ED23008C1364 /* Images.xcassets */,
+				5FD65BED19E9ED23008C1364 /* LaunchScreen.xib */,
+				5FD65BE219E9ED23008C1364 /* Supporting Files */,
+				5FD65C0819E9FE51008C1364 /* JAGestureViewController.swift */,
+			);
+			path = JAGestureRecognizerExamples;
+			sourceTree = "<group>";
+		};
+		5FD65BE219E9ED23008C1364 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FD65BE319E9ED23008C1364 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FD65BF719E9ED23008C1364 /* JAGestureRecognizerExamplesTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FD65BFA19E9ED23008C1364 /* JAGestureRecognizerExamplesTests.swift */,
+				5FD65BF819E9ED23008C1364 /* Supporting Files */,
+			);
+			path = JAGestureRecognizerExamplesTests;
+			sourceTree = "<group>";
+		};
+		5FD65BF819E9ED23008C1364 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FD65BF919E9ED23008C1364 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5FD65BDE19E9ED23008C1364 /* JAGestureRecognizerExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FD65BFE19E9ED23008C1364 /* Build configuration list for PBXNativeTarget "JAGestureRecognizerExamples" */;
+			buildPhases = (
+				5FD65BDB19E9ED23008C1364 /* Sources */,
+				5FD65BDC19E9ED23008C1364 /* Frameworks */,
+				5FD65BDD19E9ED23008C1364 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JAGestureRecognizerExamples;
+			productName = JAGestureRecognizerExamples;
+			productReference = 5FD65BDF19E9ED23008C1364 /* JAGestureRecognizerExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FD65BF319E9ED23008C1364 /* JAGestureRecognizerExamplesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FD65C0119E9ED23008C1364 /* Build configuration list for PBXNativeTarget "JAGestureRecognizerExamplesTests" */;
+			buildPhases = (
+				5FD65BF019E9ED23008C1364 /* Sources */,
+				5FD65BF119E9ED23008C1364 /* Frameworks */,
+				5FD65BF219E9ED23008C1364 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FD65BF619E9ED23008C1364 /* PBXTargetDependency */,
+			);
+			name = JAGestureRecognizerExamplesTests;
+			productName = JAGestureRecognizerExamplesTests;
+			productReference = 5FD65BF419E9ED23008C1364 /* JAGestureRecognizerExamplesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5FD65BD719E9ED23008C1364 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Jose Alvarez";
+				TargetAttributes = {
+					5FD65BDE19E9ED23008C1364 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					5FD65BF319E9ED23008C1364 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 5FD65BDE19E9ED23008C1364;
+					};
+				};
+			};
+			buildConfigurationList = 5FD65BDA19E9ED23008C1364 /* Build configuration list for PBXProject "JAGestureRecognizerExamples" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5FD65BD619E9ED23008C1364;
+			productRefGroup = 5FD65BE019E9ED23008C1364 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FD65BDE19E9ED23008C1364 /* JAGestureRecognizerExamples */,
+				5FD65BF319E9ED23008C1364 /* JAGestureRecognizerExamplesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5FD65BDD19E9ED23008C1364 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD65BEA19E9ED23008C1364 /* Main.storyboard in Resources */,
+				5FD65BEF19E9ED23008C1364 /* LaunchScreen.xib in Resources */,
+				5FD65BEC19E9ED23008C1364 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FD65BF219E9ED23008C1364 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5FD65BDB19E9ED23008C1364 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD65C0919E9FE51008C1364 /* JAGestureViewController.swift in Sources */,
+				5FD65BE519E9ED23008C1364 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FD65BF019E9ED23008C1364 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD65BFB19E9ED23008C1364 /* JAGestureRecognizerExamplesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FD65BF619E9ED23008C1364 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FD65BDE19E9ED23008C1364 /* JAGestureRecognizerExamples */;
+			targetProxy = 5FD65BF519E9ED23008C1364 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5FD65BE819E9ED23008C1364 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FD65BE919E9ED23008C1364 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5FD65BED19E9ED23008C1364 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FD65BEE19E9ED23008C1364 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5FD65BFC19E9ED23008C1364 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5FD65BFD19E9ED23008C1364 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FD65BFF19E9ED23008C1364 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JAGestureRecognizerExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5FD65C0019E9ED23008C1364 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JAGestureRecognizerExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5FD65C0219E9ED23008C1364 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JAGestureRecognizerExamplesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JAGestureRecognizerExamples.app/JAGestureRecognizerExamples";
+			};
+			name = Debug;
+		};
+		5FD65C0319E9ED23008C1364 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JAGestureRecognizerExamplesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JAGestureRecognizerExamples.app/JAGestureRecognizerExamples";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5FD65BDA19E9ED23008C1364 /* Build configuration list for PBXProject "JAGestureRecognizerExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FD65BFC19E9ED23008C1364 /* Debug */,
+				5FD65BFD19E9ED23008C1364 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FD65BFE19E9ED23008C1364 /* Build configuration list for PBXNativeTarget "JAGestureRecognizerExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FD65BFF19E9ED23008C1364 /* Debug */,
+				5FD65C0019E9ED23008C1364 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FD65C0119E9ED23008C1364 /* Build configuration list for PBXNativeTarget "JAGestureRecognizerExamplesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FD65C0219E9ED23008C1364 /* Debug */,
+				5FD65C0319E9ED23008C1364 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5FD65BD719E9ED23008C1364 /* Project object */;
+}
