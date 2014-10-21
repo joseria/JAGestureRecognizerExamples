@@ -13,7 +13,7 @@ When using gestures, you must first instantiate each recognizer with a target/ac
 
 ```objc
 let panGestureRecognizer = UIPanGestureRecognizer(target:self, action: "panHandler:");
-earthImageView.addGestureRecognizer(panGestureRecognizer);
+imageView.addGestureRecognizer(panGestureRecognizer);
 
 // Pan gesture handler
 func panHandler(recognizer:UIPanGestureRecognizer) {
@@ -35,20 +35,20 @@ rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Right;
 let leftSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeHandler:");
 leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Left;
 
-earthImageView.addGestureRecognizer(rightSwipeGestureRecognizer);
-earthImageView.addGestureRecognizer(leftSwipeGestureRecognizer);
+imageView.addGestureRecognizer(rightSwipeGestureRecognizer);
+imageView.addGestureRecognizer(leftSwipeGestureRecognizer);
 
 // Swipe gesture handler
 func swipeHandler(recognizer:UISwipeGestureRecognizer) {
     switch recognizer.direction {
     case UISwipeGestureRecognizerDirection.Left:
-        if earthImageView.alpha > 0.2 {
-            earthImageView.alpha *= kALPHA_FACTOR;
+        if imageView.alpha > 0.2 {
+            imageView.alpha *= kALPHA_FACTOR;
         }
         println("Swipe Left");
     case UISwipeGestureRecognizerDirection.Right:
-        if earthImageView.alpha < 1.0 {
-            earthImageView.alpha /= kALPHA_FACTOR;
+        if imageView.alpha < 1.0 {
+            imageView.alpha /= kALPHA_FACTOR;
         }
         println("Swipe Right");
     default:
@@ -61,14 +61,14 @@ func swipeHandler(recognizer:UISwipeGestureRecognizer) {
 
 ```objc
 let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapHandler:");
-earthImageView.addGestureRecognizer(tapGestureRecognizer);
+imageView.addGestureRecognizer(tapGestureRecognizer);
 
 // Tap gesture handler
 func tapHandler(recognizer:UITapGestureRecognizer) {
-    earthImageView.center = view.center;
-    earthImageView.transform = CGAffineTransformIdentity;
-    earthImageView.image = UIImage(named: "earth.png");
-    earthImageView.alpha = 1.0;
+    imageView.center = view.center;
+    imageView.transform = CGAffineTransformIdentity;
+    imageView.image = UIImage(named: "earth.png");
+    imageView.alpha = 1.0;
 }
 ```
 
@@ -76,15 +76,15 @@ func tapHandler(recognizer:UITapGestureRecognizer) {
 
 ```objc
 let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressHandler:");
-earthImageView.addGestureRecognizer(longPressGestureRecognizer);
+imageView.addGestureRecognizer(longPressGestureRecognizer);
 
 // Long press gesture handler
 func longPressHandler(recognizer:UILongPressGestureRecognizer) {
     if recognizer.state == UIGestureRecognizerState.Began {
         if earthBW {
-            earthImageView.image = UIImage(named: "earth.png");
+            imageView.image = UIImage(named: "earth.png");
         } else {
-            earthImageView.image = UIImage(named: "earthRipple.png");
+            imageView.image = UIImage(named: "earthRipple.png");
         }
         earthBW = !earthBW;
     }
@@ -95,7 +95,7 @@ func longPressHandler(recognizer:UILongPressGestureRecognizer) {
 
 ```objc
 let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: "pinchHandler:");
-earthImageView.addGestureRecognizer(pinchGestureRecognizer);
+imageView.addGestureRecognizer(pinchGestureRecognizer);
 
 // Pinch gesture handler
 func pinchHandler(recognizer:UIPinchGestureRecognizer) {
@@ -110,7 +110,7 @@ func pinchHandler(recognizer:UIPinchGestureRecognizer) {
 
 ```objc
 let rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: "rotateHandler:");
-earthImageView.addGestureRecognizer(rotateGestureRecognizer);
+imageView.addGestureRecognizer(rotateGestureRecognizer);
 
 // Rotate gesture handler
 func rotateHandler(recognizer:UIRotationGestureRecognizer) {
