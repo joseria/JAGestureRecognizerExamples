@@ -28,7 +28,7 @@ import UIKit
 class JAGestureViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!;
-    @IBOutlet weak var earthImageView: UIImageView!;
+    @IBOutlet weak var imageView: UIImageView!;
     @IBOutlet weak var textView: UITextView!
     var panGestureRecognizer:UIPanGestureRecognizer!;
     var leftSwipeGestureRecognizer:UISwipeGestureRecognizer!;
@@ -41,13 +41,13 @@ class JAGestureViewController: UIViewController {
         title = "Gesture Recognizer Example";
         textView.text = "This example demonstrates the use of pan, swipe, tap, long press, rotation, and pinch gestures. Try it out for yourself!";
         
-        earthImageView.userInteractionEnabled = true;
-        earthImageView.backgroundColor = UIColor.clearColor();
-        earthImageView.layer.cornerRadius = earthImageView.frame.size.width/2;
-        earthImageView.clipsToBounds = true;
-        earthImageView.center = view.center;
+        imageView.userInteractionEnabled = true;
+        imageView.backgroundColor = UIColor.clearColor();
+        imageView.layer.cornerRadius = imageView.frame.size.width/2;
+        imageView.clipsToBounds = true;
+        imageView.center = view.center;
 
-        view.addSubview(earthImageView);
+        view.addSubview(imageView);
         view.backgroundColor = UIColor.whiteColor();
         
         panGestureRecognizer = UIPanGestureRecognizer(target:self, action: "panHandler:");
@@ -60,23 +60,23 @@ class JAGestureViewController: UIViewController {
         rightSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeHandler:");
         rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Right;
         
-        earthImageView.addGestureRecognizer(panGestureRecognizer);
-        earthImageView.addGestureRecognizer(tapGestureRecognizer);
-        earthImageView.addGestureRecognizer(longPressGestureRecognizer);
-        earthImageView.addGestureRecognizer(rotateGestureRecognizer);
-        earthImageView.addGestureRecognizer(pinchGestureRecognizer);
+        imageView.addGestureRecognizer(panGestureRecognizer);
+        imageView.addGestureRecognizer(tapGestureRecognizer);
+        imageView.addGestureRecognizer(longPressGestureRecognizer);
+        imageView.addGestureRecognizer(rotateGestureRecognizer);
+        imageView.addGestureRecognizer(pinchGestureRecognizer);
     }
 
     // Switch between panning or swiping
     @IBAction func segmentedControlTapped(sender: AnyObject) {
         if (sender as UISegmentedControl).selectedSegmentIndex == 0 {
-            earthImageView.removeGestureRecognizer(leftSwipeGestureRecognizer);
-            earthImageView.removeGestureRecognizer(rightSwipeGestureRecognizer);
-            earthImageView.addGestureRecognizer(panGestureRecognizer);
+            imageView.removeGestureRecognizer(leftSwipeGestureRecognizer);
+            imageView.removeGestureRecognizer(rightSwipeGestureRecognizer);
+            imageView.addGestureRecognizer(panGestureRecognizer);
         } else {
-            earthImageView.removeGestureRecognizer(panGestureRecognizer);
-            earthImageView.addGestureRecognizer(leftSwipeGestureRecognizer);
-            earthImageView.addGestureRecognizer(rightSwipeGestureRecognizer);
+            imageView.removeGestureRecognizer(panGestureRecognizer);
+            imageView.addGestureRecognizer(leftSwipeGestureRecognizer);
+            imageView.addGestureRecognizer(rightSwipeGestureRecognizer);
         }
     }
     
@@ -91,19 +91,19 @@ class JAGestureViewController: UIViewController {
     
     // Tap gesture handler
     func tapHandler(recognizer:UITapGestureRecognizer) {
-        earthImageView.center = view.center;
-        earthImageView.transform = CGAffineTransformIdentity;
-        earthImageView.image = UIImage(named: "earth.png");
-        earthImageView.alpha = 1.0;
+        imageView.center = view.center;
+        imageView.transform = CGAffineTransformIdentity;
+        imageView.image = UIImage(named: "earth.png");
+        imageView.alpha = 1.0;
     }
     
     // Long press gesture handler
     func longPressHandler(recognizer:UILongPressGestureRecognizer) {
         if recognizer.state == UIGestureRecognizerState.Began {
             if earthBW {
-                earthImageView.image = UIImage(named: "earth.png");
+                imageView.image = UIImage(named: "earth.png");
             } else {
-                earthImageView.image = UIImage(named: "earthRipple.png");
+                imageView.image = UIImage(named: "earthRipple.png");
             }
             earthBW = !earthBW;
         }
@@ -127,13 +127,13 @@ class JAGestureViewController: UIViewController {
     func swipeHandler(recognizer:UISwipeGestureRecognizer) {
         switch recognizer.direction {
         case UISwipeGestureRecognizerDirection.Left:
-            if earthImageView.alpha > 0.2 {
-                earthImageView.alpha *= kALPHA_FACTOR;
+            if imageView.alpha > 0.2 {
+                imageView.alpha *= kALPHA_FACTOR;
             }
             println("Swipe Left");
         case UISwipeGestureRecognizerDirection.Right:
-            if earthImageView.alpha < 1.0 {
-                earthImageView.alpha /= kALPHA_FACTOR;
+            if imageView.alpha < 1.0 {
+                imageView.alpha /= kALPHA_FACTOR;
             }
             println("Swipe Right");
         default:
