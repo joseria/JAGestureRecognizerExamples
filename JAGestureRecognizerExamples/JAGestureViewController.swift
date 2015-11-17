@@ -27,56 +27,62 @@ import UIKit
 
 class JAGestureViewController: UIViewController {
 
-    @IBOutlet weak var segmentedControl: UISegmentedControl!;
-    @IBOutlet weak var imageView: UIImageView!;
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
-    var panGestureRecognizer:UIPanGestureRecognizer!;
-    var leftSwipeGestureRecognizer:UISwipeGestureRecognizer!;
-    var rightSwipeGestureRecognizer:UISwipeGestureRecognizer!;
-    var earthBW = false;
-    let kALPHA_FACTOR:CGFloat = 0.8;
+    @IBOutlet weak var swipeLabel: UILabel!
+    var panGestureRecognizer:UIPanGestureRecognizer!
+    var leftSwipeGestureRecognizer:UISwipeGestureRecognizer!
+    var rightSwipeGestureRecognizer:UISwipeGestureRecognizer!
+    var earthBW = false
+    let kALPHA_FACTOR:CGFloat = 0.8
     
     override func viewDidLoad() {
-        super.viewDidLoad();
+        super.viewDidLoad()
         title = "Gesture Recognizer Example";
-        textView.text = "This example demonstrates the use of pan, swipe, tap, long press, rotation, and pinch gestures. Try it out for yourself!";
+        textView.text = "This example demonstrates the use of pan, swipe, tap, long press, rotation, and pinch gestures. Try it out for yourself!"
         
-        imageView.userInteractionEnabled = true;
-        imageView.backgroundColor = UIColor.clearColor();
-        imageView.layer.cornerRadius = imageView.frame.size.width/2;
-        imageView.clipsToBounds = true;
-        imageView.center = view.center;
+        imageView.userInteractionEnabled = true
+        imageView.backgroundColor = UIColor.clearColor()
+        imageView.layer.cornerRadius = imageView.frame.size.width/2
+        imageView.clipsToBounds = true
+        imageView.center = view.center
+        
+        swipeLabel.hidden = true
 
-        view.addSubview(imageView);
-        view.backgroundColor = UIColor.whiteColor();
+        view.addSubview(imageView)
+        view.backgroundColor = UIColor.whiteColor()
         
-        panGestureRecognizer = UIPanGestureRecognizer(target:self, action: "panHandler:");
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapHandler:");
-        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressHandler:");
-        let rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: "rotateHandler:");
-        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: "pinchHandler:");
-        leftSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeHandler:");
-        leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Left;
-        rightSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeHandler:");
-        rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Right;
+        panGestureRecognizer = UIPanGestureRecognizer(target:self, action: "panHandler:")
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapHandler:")
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressHandler:")
+        let rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: "rotateHandler:")
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: "pinchHandler:")
+        leftSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeHandler:")
+        leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Left
+        rightSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeHandler:")
+        rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Right
         
-        imageView.addGestureRecognizer(panGestureRecognizer);
-        imageView.addGestureRecognizer(tapGestureRecognizer);
-        imageView.addGestureRecognizer(longPressGestureRecognizer);
-        imageView.addGestureRecognizer(rotateGestureRecognizer);
-        imageView.addGestureRecognizer(pinchGestureRecognizer);
+        imageView.addGestureRecognizer(panGestureRecognizer)
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        imageView.addGestureRecognizer(longPressGestureRecognizer)
+        imageView.addGestureRecognizer(rotateGestureRecognizer)
+        imageView.addGestureRecognizer(pinchGestureRecognizer)
     }
 
     // Switch between panning or swiping
     @IBAction func segmentedControlTapped(sender: AnyObject) {
-        if (sender as UISegmentedControl).selectedSegmentIndex == 0 {
-            imageView.removeGestureRecognizer(leftSwipeGestureRecognizer);
-            imageView.removeGestureRecognizer(rightSwipeGestureRecognizer);
-            imageView.addGestureRecognizer(panGestureRecognizer);
+        if (sender as! UISegmentedControl).selectedSegmentIndex == 0 {
+            swipeLabel.hidden = true
+            imageView.removeGestureRecognizer(leftSwipeGestureRecognizer)
+            imageView.removeGestureRecognizer(rightSwipeGestureRecognizer)
+            imageView.addGestureRecognizer(panGestureRecognizer)
         } else {
-            imageView.removeGestureRecognizer(panGestureRecognizer);
-            imageView.addGestureRecognizer(leftSwipeGestureRecognizer);
-            imageView.addGestureRecognizer(rightSwipeGestureRecognizer);
+            swipeLabel.hidden = false
+            swipeLabel.text = String(format:"Alpha %.02f", imageView.alpha)
+            imageView.removeGestureRecognizer(panGestureRecognizer)
+            imageView.addGestureRecognizer(leftSwipeGestureRecognizer)
+            imageView.addGestureRecognizer(rightSwipeGestureRecognizer)
         }
     }
     
@@ -84,43 +90,43 @@ class JAGestureViewController: UIViewController {
     
     // Pan gesture handler
     func panHandler(recognizer:UIPanGestureRecognizer) {
-        let translation = recognizer.translationInView(view);
-        recognizer.view!.center = CGPoint(x: recognizer.view!.center.x + translation.x, y: recognizer.view!.center.y + translation.y);
-        recognizer.setTranslation(CGPointZero, inView: view);
+        let translation = recognizer.translationInView(view)
+        recognizer.view!.center = CGPoint(x: recognizer.view!.center.x + translation.x, y: recognizer.view!.center.y + translation.y)
+        recognizer.setTranslation(CGPointZero, inView: view)
     }
     
     // Tap gesture handler
     func tapHandler(recognizer:UITapGestureRecognizer) {
-        imageView.center = view.center;
-        imageView.transform = CGAffineTransformIdentity;
-        imageView.image = UIImage(named: "earth.png");
-        imageView.alpha = 1.0;
+        imageView.center = view.center
+        imageView.transform = CGAffineTransformIdentity
+        imageView.image = UIImage(named: "earth.png")
+        imageView.alpha = 1.0
     }
     
     // Long press gesture handler
     func longPressHandler(recognizer:UILongPressGestureRecognizer) {
         if recognizer.state == UIGestureRecognizerState.Began {
             if earthBW {
-                imageView.image = UIImage(named: "earth.png");
+                imageView.image = UIImage(named: "earth.png")
             } else {
-                imageView.image = UIImage(named: "earthRipple.png");
+                imageView.image = UIImage(named: "earthRipple.png")
             }
-            earthBW = !earthBW;
+            earthBW = !earthBW
         }
     }
     
     // Rotate gesture handler
     func rotateHandler(recognizer:UIRotationGestureRecognizer) {
-        recognizer.view!.transform = CGAffineTransformRotate(recognizer.view!.transform, recognizer.rotation);
+        recognizer.view!.transform = CGAffineTransformRotate(recognizer.view!.transform, recognizer.rotation)
         // Reset the rotation
-        recognizer.rotation = 0;
+        recognizer.rotation = 0
     }
     
     // Pinch gesture handler
     func pinchHandler(recognizer:UIPinchGestureRecognizer) {
-        recognizer.view!.transform = CGAffineTransformScale(recognizer.view!.transform, recognizer.scale, recognizer.scale);
+        recognizer.view!.transform = CGAffineTransformScale(recognizer.view!.transform, recognizer.scale, recognizer.scale)
         // Reset the scale factor
-        recognizer.scale = 1;
+        recognizer.scale = 1
     }
 
     // Swipe gesture handler
@@ -128,16 +134,18 @@ class JAGestureViewController: UIViewController {
         switch recognizer.direction {
         case UISwipeGestureRecognizerDirection.Left:
             if imageView.alpha > 0.2 {
-                imageView.alpha *= kALPHA_FACTOR;
+                imageView.alpha *= kALPHA_FACTOR
+                swipeLabel.text = String(format:"Alpha %.02f", imageView.alpha)
             }
-            println("Swipe Left");
+            print("Swipe Left");
         case UISwipeGestureRecognizerDirection.Right:
             if imageView.alpha < 1.0 {
-                imageView.alpha /= kALPHA_FACTOR;
+                imageView.alpha /= kALPHA_FACTOR
+                swipeLabel.text = String(format:"Alpha %.02f", imageView.alpha)
             }
-            println("Swipe Right");
+            print("Swipe Right")
         default:
-            println("Undefined swipe direction");
+            print("Undefined swipe direction")
         }
     }
 }

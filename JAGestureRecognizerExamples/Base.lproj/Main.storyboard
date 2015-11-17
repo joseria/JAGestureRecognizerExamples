@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dzU-1B-YWx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dzU-1B-YWx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -13,6 +14,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="len-ga-dNl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -37,6 +39,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="9t6-Yk-jtT">
                                 <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5Vs-aL-2zN"/>
                                     <constraint firstAttribute="height" constant="200" id="xNG-Rl-ij1"/>
@@ -44,6 +47,7 @@
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YUG-Jw-ydk">
                                 <rect key="frame" x="249" y="543" width="103" height="29"/>
+                                <animations/>
                                 <segments>
                                     <segment title="Pan"/>
                                     <segment title="Swipe"/>
@@ -52,14 +56,23 @@
                                     <action selector="segmentedControlTapped:" destination="RHW-sS-CHp" eventType="valueChanged" id="t7K-My-3dF"/>
                                 </connections>
                             </segmentedControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acI-JA-lOM">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acI-JA-lOM">
                                 <rect key="frame" x="16" y="72" width="568" height="93"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZON-z2-Zh9">
+                                <rect key="frame" x="279" y="494" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="YUG-Jw-ydk" secondAttribute="centerX" constant="-0.5" id="BUm-tf-hRb"/>
@@ -69,6 +82,8 @@
                             <constraint firstItem="acI-JA-lOM" firstAttribute="top" secondItem="311-5E-Uku" secondAttribute="bottom" constant="8" symbolic="YES" id="WEZ-O8-yLm"/>
                             <constraint firstItem="acI-JA-lOM" firstAttribute="centerX" secondItem="9t6-Yk-jtT" secondAttribute="centerX" id="Zmf-bh-MXb"/>
                             <constraint firstAttribute="centerX" secondItem="9t6-Yk-jtT" secondAttribute="centerX" id="egZ-6x-KMB"/>
+                            <constraint firstItem="YUG-Jw-ydk" firstAttribute="top" secondItem="ZON-z2-Zh9" secondAttribute="bottom" constant="28" id="rYj-Tp-4xt"/>
+                            <constraint firstItem="ZON-z2-Zh9" firstAttribute="centerX" secondItem="YUG-Jw-ydk" secondAttribute="centerX" id="tQ8-9e-YjK"/>
                             <constraint firstAttribute="centerY" secondItem="9t6-Yk-jtT" secondAttribute="centerY" id="uin-jb-FGE"/>
                         </constraints>
                     </view>
@@ -76,6 +91,7 @@
                     <connections>
                         <outlet property="imageView" destination="9t6-Yk-jtT" id="zEQ-DU-MMc"/>
                         <outlet property="segmentedControl" destination="YUG-Jw-ydk" id="qUE-73-kLC"/>
+                        <outlet property="swipeLabel" destination="ZON-z2-Zh9" id="6hm-8I-WZe"/>
                         <outlet property="textView" destination="acI-JA-lOM" id="4PG-gM-Bm1"/>
                     </connections>
                 </viewController>
