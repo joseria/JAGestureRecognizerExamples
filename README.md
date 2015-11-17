@@ -6,7 +6,7 @@ JAGestureRecognizerExamples
 UIGestureRecognizer Examples written in Swift. These cover pan, swipe, tap, long press, pinch, and rotate gestures. 
 
 ##Example Project
-An example project is provided that requires IOS8 and XCode 6.0. 
+An example project is provided that requires IOS8 and XCode 7.0. 
 When using gestures, you must first instantiate each recognizer with a target/action. Then you can add this recognizer to a view. Below are examples from the sample project that demonstrates how each `UIGestureRecognizer` is used. 
 
 ###UIPanGestureRecognizer
